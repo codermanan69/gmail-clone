@@ -1,8 +1,3 @@
-// Compose button action
-document.querySelector(".compose-btn").addEventListener("click", function() {
-  alert("📩 Compose new mail!");
-});
-
 // Dark Mode toggle
 let darkBtn = document.getElementById("darkToggle");
 darkBtn.addEventListener("click", function() {
@@ -15,10 +10,15 @@ darkBtn.addEventListener("click", function() {
   }
 });
 
-// Mail click -> mark as read/unread
+// Mail click -> mark as read/unread (except checkbox)
 let mails = document.querySelectorAll(".mail");
 mails.forEach(function(mail) {
-  mail.addEventListener("click", function() {
+  mail.addEventListener("click", function(e) {
+    // Agar checkbox pe click hua -> skip
+    if (e.target.tagName.toLowerCase() === "input") {
+      return;
+    }
+
     if (mail.classList.contains("unread")) {
       mail.classList.remove("unread");
       alert("✅ Marked as read: " + mail.querySelector(".from").innerText);
