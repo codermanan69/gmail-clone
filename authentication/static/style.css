@@ -1,0 +1,404 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  background: #ffffff;
+  color: #202124;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ========================= */
+/* ===== LANDING PAGE ====== */
+/* ========================= */
+
+.auth-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  width: 360px;
+  text-align: center;
+}
+
+.auth-card .logo {
+  width: 150px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.auth-card h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.auth-card p {
+  color: #5f6368;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.auth-card button:hover {
+  background: #1669c1;
+}
+
+.form {
+  display: none;
+}
+
+.form.active {
+  display: block;
+}
+
+/* ========================= */
+/* ==== DASHBOARD PAGE ===== */
+/* ========================= */
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #f1f3f4;
+  padding: 20px;
+  height: 100vh;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.gmail-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #202124;
+  font-family: "Product Sans", Arial, sans-serif;
+}
+
+/* Compose button */
+.compose-btn {
+  width: 100%;
+  padding: 12px 0;
+  margin-bottom: 20px;
+  border: none;
+  background: #fff;
+  color: #202124;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 24px;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.2s ease;
+}
+
+.compose-btn:hover {
+  background: #f1f3f4;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* Sidebar menu */
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #202124;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.sidebar li:hover {
+  background: #e8eaed;
+  box-shadow: inset 3px 0 #1a73e8;
+}
+
+/* Main Section */
+.main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #f8f9fa;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.topbar input {
+  width: 70%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background: #f1f3f4;
+  font-size: 14px;
+  outline: none;
+}
+
+.topbar button {
+  padding: 8px 15px;
+  border: none;
+  background: #1a73e8;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.topbar button:hover {
+  background: #1669c1;
+}
+
+/* Mail list */
+.mail-list {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.mail {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.mail:hover {
+  background: #f8f9fa;
+  box-shadow: inset 3px 0 #1a73e8;
+}
+
+.mail input {
+  margin-right: 10px;
+}
+
+.mail .from {
+  width: 150px;
+  font-weight: 600;
+  color: #202124;
+}
+
+.mail .subject {
+  flex: 1;
+  color: #555;
+}
+
+.mail .time {
+  color: gray;
+  font-size: 13px;
+}
+
+.mail.unread {
+  background: #e8f0fe;
+  font-weight: bold;
+}
+
+/* ========================= */
+/* ==== DARK MODE STYLES ====*/
+/* ========================= */
+
+body.dark-mode {
+  background: #202124;
+  color: #e8eaed;
+}
+
+body.dark-mode .sidebar {
+  background: #303134;
+  color: #e8eaed;
+  border-right: 1px solid #5f6368;
+}
+
+body.dark-mode .compose-btn {
+  background: #202124;
+  color: #e8eaed;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .sidebar li {
+  color: #e8eaed;
+}
+
+body.dark-mode .sidebar li:hover {
+  background: #3c4043;
+  box-shadow: inset 3px 0 #8ab4f8;
+}
+
+body.dark-mode .main {
+  background: #202124;
+}
+
+body.dark-mode .topbar {
+  background: #303134;
+}
+
+body.dark-mode .topbar input {
+  background: #3c4043;
+  color: #e8eaed;
+}
+
+body.dark-mode .topbar button {
+  background: #8ab4f8;
+  color: #202124;
+}
+
+body.dark-mode .mail-list {
+  background: #303134;
+}
+
+body.dark-mode .mail {
+  border-bottom: 1px solid #5f6368;
+}
+
+body.dark-mode .mail .from {
+  color: #e8eaed;
+}
+
+body.dark-mode .mail .subject {
+  color: #bdc1c6;
+}
+
+body.dark-mode .mail .time {
+  color: #9aa0a6;
+}
+
+body.dark-mode .mail:hover {
+  background: #3c4043;
+}
+
+/* Fix unread rows in Dark Mode */
+body.dark-mode .mail.unread {
+  background: #2d2f31;
+  color: #e8eaed;
+}
+
+body.dark-mode .mail.unread .from,
+body.dark-mode .mail.unread .subject,
+body.dark-mode .mail.unread .time {
+  color: #e8eaed;
+}
+
+body.dark-mode .mail:hover,
+body.dark-mode .mail.unread:hover {
+  background: #3c4043;
+  box-shadow: inset 3px 0 #8ab4f8;
+}
+/* ========================= */
+/* ==== COLLAPSIBLE SIDEBAR ==*/
+/* ========================= */
+
+.collapse-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #5f6368;
+  transition: transform 0.3s;
+}
+
+.collapse-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Collapsed sidebar */
+.sidebar.collapsed {
+  width: 70px;
+  padding: 20px 10px;
+  transition: width 0.3s ease;
+}
+
+/* Hide Gmail text when collapsed */
+.sidebar.collapsed .gmail-title {
+  display: none;
+}
+
+/* Compose button collapsed → only show icon */
+.sidebar.collapsed .compose-btn {
+  justify-content: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  gap: 0; /* remove gap between icon and hidden text */
+}
+
+.sidebar.collapsed .compose-btn .text {
+  display: none; /* hide only text span */
+}
+
+/* Menu items collapsed → only icons */
+.sidebar.collapsed ul li {
+  justify-content: center;
+  padding: 12px;
+  gap: 0; /* remove extra space */
+}
+
+.sidebar.collapsed ul li .label {
+  display: none; /* hide only label, keep icon */
+}

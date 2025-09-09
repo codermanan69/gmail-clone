@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gmail Clone Dashboard</title>
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Django Static CSS -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <img src="https://www.gstatic.com/images/branding/product/1x/gmail_2020q4_48dp.png" alt="Gmail">
+      <span class="gmail-title">Gmail</span>
+      <!-- Collapse Button -->
+      <button id="collapseBtn" class="collapse-btn">☰</button>
+    </div>
+
+    <button class="compose-btn">
+      <span class="material-icons">add</span>
+      <span class="text">Compose</span>
+    </button>
+
+    <ul>
+      <li><span class="material-icons">inbox</span><span class="label">Inbox</span></li>
+      <li><span class="material-icons">star</span><span class="label">Starred</span></li>
+      <li><span class="material-icons">schedule</span><span class="label">Snoozed</span></li>
+      <li><span class="material-icons">send</span><span class="label">Sent</span></li>
+      <li><span class="material-icons">drafts</span><span class="label">Drafts</span></li>
+      <li><span class="material-icons">expand_more</span><span class="label">More</span></li>
+    </ul>
+  </div>
+
+  <!-- Main Section -->
+  <div class="main">
+    <div class="topbar">
+      <input type="text" placeholder="Search mail">
+      <button id="darkToggle">🌙 Dark Mode</button>
+    </div>
+
+    <h3>Inbox</h3>
+    <div class="mail-list">
+      <div class="mail unread">
+        <input type="checkbox">
+        <span class="from">Google</span>
+        <span class="subject">Welcome to the Gmail clone</span>
+        <span class="time">10:30 AM</span>
+      </div>
+      <div class="mail unread">
+        <input type="checkbox">
+        <span class="from">YouTube</span>
+        <span class="subject">Video recommendation</span>
+        <span class="time">9:15 AM</span>
+      </div>
+      <div class="mail">
+        <input type="checkbox">
+        <span class="from">Alex</span>
+        <span class="subject">Meeting reminder</span>
+        <span class="time">8:00 AM</span>
+      </div>
+      <div class="mail">
+        <input type="checkbox">
+        <span class="from">Sarah</span>
+        <span class="subject">Monthly Report</span>
+        <span class="time">Feb 20</span>
+      </div>
+      <div class="mail">
+        <input type="checkbox">
+        <span class="from">Company</span>
+        <span class="subject">Newsletter</span>
+        <span class="time">Feb 19</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Django Static JS -->
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
